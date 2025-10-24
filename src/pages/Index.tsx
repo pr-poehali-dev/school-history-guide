@@ -104,7 +104,6 @@ const Index = () => {
               </button>
             ))}
           </div>
-        </main>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-8 rounded-2xl bg-gray-50 border border-gray-100">
