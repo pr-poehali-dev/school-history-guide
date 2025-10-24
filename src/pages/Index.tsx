@@ -1,176 +1,169 @@
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
-  const [activeFavorites, setActiveFavorites] = useState<string[]>([]);
-
-  const sections = [
-    {
-      id: "topics",
-      title: "Темы",
-      description: "Основные периоды и события",
-      icon: "BookOpen",
-      color: "primary",
-    },
-    {
-      id: "timeline",
-      title: "Хронология",
-      description: "Временная шкала истории",
-      icon: "Clock",
-      color: "secondary",
-    },
-    {
-      id: "maps",
-      title: "Карты",
-      description: "Исторические территории",
-      icon: "Map",
-      color: "primary",
-    },
-    {
-      id: "terms",
-      title: "Термины",
-      description: "Важные понятия и определения",
-      icon: "FileText",
-      color: "secondary",
-    },
-    {
-      id: "tests",
-      title: "Тесты",
-      description: "Проверь свои знания",
-      icon: "CheckCircle",
-      color: "primary",
-    },
-    {
-      id: "people",
-      title: "Личности",
-      description: "Биографии исторических деятелей",
-      icon: "Users",
-      color: "secondary",
-    },
-    {
-      id: "favorites",
-      title: "Избранное",
-      description: "Сохраненные материалы",
-      icon: "Star",
-      color: "accent",
-    },
-  ];
-
-  const toggleFavorite = (id: string) => {
-    setActiveFavorites((prev) =>
-      prev.includes(id) ? prev.filter((fav) => fav !== id) : [...prev, id]
-    );
-  };
+  const navigate = useNavigate();
+  const classes = Array.from({ length: 11 }, (_, i) => i + 1);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-pink-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40 relative overflow-hidden">
       <div
-        className="absolute top-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl -z-10"
-        style={{ transform: "translate(30%, -30%)" }}
+        className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl animate-pulse"
+        style={{ transform: "translate(30%, -30%)", animationDuration: "4s" }}
       />
       <div
-        className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10"
-        style={{ transform: "translate(-30%, 30%)" }}
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl animate-pulse"
+        style={{ transform: "translate(-30%, 30%)", animationDuration: "3s" }}
+      />
+      <div
+        className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-accent/30 rounded-full blur-3xl animate-pulse"
+        style={{
+          transform: "translate(-50%, -50%)",
+          animationDuration: "5s",
+        }}
       />
 
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <header className="text-center mb-16 animate-fade-in">
-          <div className="inline-block mb-4">
+      <div className="container mx-auto px-4 py-8 relative z-10">
+        <nav className="flex justify-between items-center mb-16">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+              <Icon name="BookOpen" size={24} className="text-white" />
+            </div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              УчиЛегко
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" className="gap-2">
+              <Icon name="Search" size={18} />
+              Поиск
+            </Button>
+            <Button variant="ghost" className="gap-2">
+              <Icon name="Star" size={18} />
+              Избранное
+            </Button>
+          </div>
+        </nav>
+
+        <main className="max-w-5xl mx-auto text-center mb-20">
+          <div className="mb-8 animate-fade-in">
             <Badge
               variant="outline"
-              className="text-lg px-6 py-2 border-primary/30 text-primary"
+              className="text-base px-6 py-2 border-primary/30 text-primary mb-6 inline-flex items-center gap-2"
             >
-              #87CEEB
+              <Icon name="Sparkles" size={16} />
+              Твой умный помощник
             </Badge>
           </div>
-          <h1 className="text-6xl font-bold mb-4 tracking-tight">
-            ИСТОРИЯ 10
+
+          <h1
+            className="text-7xl font-bold mb-6 tracking-tight leading-tight"
+            style={{ animationDelay: "0.1s" }}
+          >
+            Привет, ученик! 👋
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Основные периоды и события
-          </p>
-          <p className="text-sm text-foreground/60 mt-6 max-w-3xl mx-auto leading-relaxed">
-            В данном разделе представлены ключевые факты, биографии известных
-            деятелей и важные даты, необходимые для углубленного изучения
-            истории 10 класса.
-          </p>
-        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {sections.map((section, index) => (
-            <Card
-              key={section.id}
-              className="group relative overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-y-1"
-              style={{
-                animationDelay: `${index * 100}ms`,
-                animation: "fade-in 0.5s ease-out forwards",
-                opacity: 0,
-              }}
+          <p className="text-3xl mb-4 text-foreground/80 font-medium">
+            Поняли все — поймёшь и ты!
+          </p>
+
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+            Справочник по всем предметам с 1 по 11 класс. Учись легко, находи
+            ответы быстро и становись лучшим в классе! 🚀
+          </p>
+
+          <div className="flex items-center justify-center gap-4 mb-20">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-secondary to-pink-500 hover:from-pink-500 hover:to-secondary text-white px-8 py-6 text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
-              <div className="p-8">
-                <div className="flex items-start justify-between mb-4">
-                  <div
-                    className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 ${
-                      section.color === "primary"
-                        ? "bg-primary/10"
-                        : section.color === "secondary"
-                        ? "bg-secondary/10"
-                        : "bg-accent/50"
-                    }`}
-                  >
-                    <Icon
-                      name={section.icon as any}
-                      className={
-                        section.color === "primary"
-                          ? "text-primary"
-                          : section.color === "secondary"
-                          ? "text-secondary"
-                          : "text-secondary"
-                      }
-                      size={28}
-                    />
-                  </div>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleFavorite(section.id);
-                    }}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity"
-                  >
-                    <Icon
-                      name="Heart"
-                      size={20}
-                      className={
-                        activeFavorites.includes(section.id)
-                          ? "fill-secondary text-secondary"
-                          : "text-muted-foreground hover:text-secondary"
-                      }
-                    />
-                  </button>
-                </div>
-                <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {section.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {section.description}
-                </p>
-              </div>
-            </Card>
-          ))}
-        </div>
-
-        <footer className="text-center">
-          <div className="inline-flex items-center gap-8 p-6 bg-white/50 backdrop-blur-sm rounded-3xl border border-border/50">
-            <button className="px-8 py-3 bg-secondary text-secondary-foreground rounded-2xl font-semibold hover:scale-105 transition-transform">
-              Berigns Designs
-            </button>
-            <button className="px-8 py-3 bg-white border-2 border-border rounded-2xl font-medium hover:border-primary transition-colors">
-              'Segoe UI', Resigns
-            </button>
+              <Icon name="Rocket" size={20} className="mr-2" />
+              Начать учиться
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="px-8 py-6 text-lg rounded-2xl border-2 hover:border-primary"
+            >
+              <Icon name="Play" size={20} className="mr-2" />
+              Как это работает?
+            </Button>
           </div>
-        </footer>
+
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-6 flex items-center justify-center gap-3">
+              <Icon name="GraduationCap" size={28} className="text-primary" />
+              Выбери свой класс
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-11 gap-3 max-w-6xl mx-auto">
+            {classes.map((classNum, index) => (
+              <button
+                key={classNum}
+                onClick={() =>
+                  classNum === 10
+                    ? navigate("/class/10")
+                    : navigate("/coming-soon")
+                }
+                className={`group relative p-6 rounded-2xl border-2 transition-all duration-300 hover:scale-110 hover:shadow-2xl ${
+                  classNum === 10
+                    ? "bg-gradient-to-br from-primary/10 to-secondary/10 border-primary/50 hover:border-primary"
+                    : "bg-white/60 backdrop-blur-sm border-border hover:border-primary/30"
+                }`}
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                  animation: "fade-in 0.5s ease-out forwards",
+                  opacity: 0,
+                }}
+              >
+                <div className="text-3xl font-bold mb-1">{classNum}</div>
+                <div className="text-xs text-muted-foreground">класс</div>
+                {classNum === 10 && (
+                  <div className="absolute -top-2 -right-2">
+                    <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center animate-bounce">
+                      <Icon name="Check" size={14} className="text-white" />
+                    </div>
+                  </div>
+                )}
+              </button>
+            ))}
+          </div>
+        </main>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="text-center p-8 rounded-3xl bg-white/60 backdrop-blur-sm border border-border/50 hover:shadow-xl transition-all group">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Icon name="Lightbulb" size={32} className="text-primary" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Понятно и просто</h3>
+            <p className="text-muted-foreground text-sm">
+              Сложные темы объясняем простым языком
+            </p>
+          </div>
+
+          <div className="text-center p-8 rounded-3xl bg-white/60 backdrop-blur-sm border border-border/50 hover:shadow-xl transition-all group">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Icon name="Zap" size={32} className="text-secondary" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Быстрый поиск</h3>
+            <p className="text-muted-foreground text-sm">
+              Найди нужную тему за секунды
+            </p>
+          </div>
+
+          <div className="text-center p-8 rounded-3xl bg-white/60 backdrop-blur-sm border border-border/50 hover:shadow-xl transition-all group">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-accent/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Icon name="Trophy" size={32} className="text-secondary" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Стань лучшим</h3>
+            <p className="text-muted-foreground text-sm">
+              Проверяй знания тестами и получай награды
+            </p>
+          </div>
+        </div>
       </div>
 
       <style>{`
