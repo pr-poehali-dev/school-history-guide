@@ -69,10 +69,23 @@ const History = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      <div className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary" />
+    <div className="min-h-screen bg-gradient-to-br from-white via-amber-50/30 to-orange-50/20 relative overflow-hidden">
+      <div
+        className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-200/20 rounded-full blur-3xl animate-pulse"
+        style={{ transform: "translate(30%, -30%)", animationDuration: "5s" }}
+      />
+      <div
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-300/20 rounded-full blur-3xl animate-pulse"
+        style={{ transform: "translate(-30%, 30%)", animationDuration: "4s" }}
+      />
+      <div className="absolute top-1/3 right-1/4 text-9xl opacity-5 pointer-events-none">
+        🏛️
+      </div>
+      <div className="absolute bottom-1/4 left-1/4 text-9xl opacity-5 pointer-events-none">
+        📜
+      </div>
 
-      <div className="container mx-auto px-6 py-8 max-w-7xl">
+      <div className="container mx-auto px-4 py-8 relative z-10">
         <nav className="flex justify-between items-center mb-12">
           <div className="flex items-center gap-3">
             <Button
@@ -84,10 +97,10 @@ const History = () => {
               К предметам
             </Button>
             <div className="flex items-center gap-3 ml-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center shadow-sm">
-                <span className="text-xl">🪵</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+                <Icon name="Scroll" size={20} className="text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">История • 10 класс</span>
+              <span className="text-xl font-bold">История • 10 класс</span>
             </div>
           </div>
           <div className="flex items-center gap-4">

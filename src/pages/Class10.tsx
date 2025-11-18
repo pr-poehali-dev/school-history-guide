@@ -24,10 +24,17 @@ const Class10 = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      <div className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary" />
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40 relative overflow-hidden">
+      <div
+        className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl animate-pulse"
+        style={{ transform: "translate(30%, -30%)", animationDuration: "4s" }}
+      />
+      <div
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl animate-pulse"
+        style={{ transform: "translate(-30%, 30%)", animationDuration: "3s" }}
+      />
 
-      <div className="container mx-auto px-6 py-8 max-w-7xl">
+      <div className="container mx-auto px-4 py-8 relative z-10">
         <nav className="flex justify-between items-center mb-12">
           <div className="flex items-center gap-3">
             <Button
@@ -39,10 +46,10 @@ const Class10 = () => {
               Назад
             </Button>
             <div className="flex items-center gap-3 ml-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center shadow-sm">
-                <span className="text-xl">🪵</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <Icon name="GraduationCap" size={20} className="text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">ЯсенПень • 10 класс</span>
+              <span className="text-xl font-bold">10 класс</span>
             </div>
           </div>
           <div className="flex items-center gap-4">
