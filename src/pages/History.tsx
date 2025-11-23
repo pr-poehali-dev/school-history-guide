@@ -17,6 +17,7 @@ const History = () => {
       description: "Основные периоды и события истории",
       icon: "BookOpen",
       emoji: "📖",
+      path: "/class/10/history/chapters",
     },
     {
       id: "timeline",
@@ -24,6 +25,7 @@ const History = () => {
       description: "Временная шкала исторических событий",
       icon: "Clock",
       emoji: "⏰",
+      path: undefined,
     },
     {
       id: "maps",
@@ -31,6 +33,7 @@ const History = () => {
       description: "Исторические территории и границы",
       icon: "Map",
       emoji: "🗺️",
+      path: undefined,
     },
     {
       id: "terms",
@@ -38,6 +41,7 @@ const History = () => {
       description: "Важные понятия и определения",
       icon: "FileText",
       emoji: "📝",
+      path: undefined,
     },
     {
       id: "tests",
@@ -45,6 +49,7 @@ const History = () => {
       description: "Проверь свои знания по истории",
       icon: "CheckCircle",
       emoji: "✅",
+      path: undefined,
     },
     {
       id: "people",
@@ -52,6 +57,7 @@ const History = () => {
       description: "Биографии исторических деятелей",
       icon: "Users",
       emoji: "👥",
+      path: undefined,
     },
     {
       id: "favorites",
@@ -59,6 +65,7 @@ const History = () => {
       description: "Твои сохранённые материалы",
       icon: "Star",
       emoji: "⭐",
+      path: undefined,
     },
   ];
 
@@ -174,6 +181,11 @@ const History = () => {
             {sections.map((section, index) => (
               <Card
                 key={section.id}
+                onClick={() =>
+                  section.path
+                    ? navigate(section.path)
+                    : navigate("/coming-soon")
+                }
                 className="group relative overflow-hidden border-2 border-amber-200/50 hover:border-amber-400 transition-all duration-300 cursor-pointer hover:shadow-2xl hover:-translate-y-2 bg-white/80 backdrop-blur-sm"
                 style={{
                   animationDelay: `${index * 70}ms`,
