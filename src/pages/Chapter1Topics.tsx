@@ -108,7 +108,7 @@ const Chapter1Topics = () => {
                   opacity: 0,
                 }}
                 onClick={() =>
-                  topic.available && navigate(`/class/10/history/ww1`)
+                  topic.available && navigate(`/class/10/history/chapter-1/world-war-one`)
                 }
               >
                 <div className="absolute top-0 right-0 text-8xl opacity-5 pointer-events-none p-8">
