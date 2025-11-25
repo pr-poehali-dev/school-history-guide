@@ -137,15 +137,15 @@ const WorldWarOneTests = () => {
     const card = dateCards[currentDateCard];
     
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-        <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
+      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40">
+        <header className="bg-white/80 backdrop-blur-sm border-b border-pink-200 sticky top-0 z-10">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
             <div className="flex items-center gap-3">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={resetDatesTest}
-                className="hover:bg-blue-100"
+                className="hover:bg-pink-100"
               >
                 <Icon name="ArrowLeft" size={20} />
               </Button>
@@ -182,7 +182,7 @@ const WorldWarOneTests = () => {
               </Button>
               <Button
                 onClick={handleNextDateCard}
-                className="flex-1 bg-blue-600 hover:bg-blue-700"
+                className="flex-1 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
               >
                 Следующая карточка
                 <Icon name="ChevronRight" size={18} className="ml-2" />
@@ -194,7 +194,7 @@ const WorldWarOneTests = () => {
                 <div
                   key={index}
                   className={`h-2 w-2 rounded-full transition-colors ${
-                    index === currentDateCard ? "bg-blue-600" : "bg-gray-300"
+                    index === currentDateCard ? "bg-pink-500" : "bg-gray-300"
                   }`}
                 />
               ))}
@@ -210,15 +210,15 @@ const WorldWarOneTests = () => {
       const percentage = Math.round((score / questions.length) * 100);
       
       return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-          <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
+        <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40">
+          <header className="bg-white/80 backdrop-blur-sm border-b border-pink-200 sticky top-0 z-10">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
               <div className="flex items-center gap-3">
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={resetQuiz}
-                  className="hover:bg-blue-100"
+                  className="hover:bg-pink-100"
                 >
                   <Icon name="ArrowLeft" size={20} />
                 </Button>
@@ -273,7 +273,7 @@ const WorldWarOneTests = () => {
                     setScore(0);
                     setQuizFinished(false);
                   }}
-                  className="flex-1 bg-blue-600 hover:bg-blue-700"
+                  className="flex-1 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
                 >
                   <Icon name="RotateCcw" size={18} className="mr-2" />
                   Пройти снова
@@ -288,15 +288,15 @@ const WorldWarOneTests = () => {
     const question = questions[currentQuestion];
     
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-        <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
+      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40">
+        <header className="bg-white/80 backdrop-blur-sm border-b border-pink-200 sticky top-0 z-10">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
             <div className="flex items-center gap-3">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={resetQuiz}
-                className="hover:bg-blue-100"
+                className="hover:bg-pink-100"
               >
                 <Icon name="ArrowLeft" size={20} />
               </Button>
@@ -332,7 +332,7 @@ const WorldWarOneTests = () => {
                     disabled={selectedAnswer !== null}
                     className={`w-full p-4 text-left rounded-lg border-2 transition-all ${
                       !showResult
-                        ? "border-gray-200 hover:border-blue-400 hover:bg-blue-50"
+                        ? "border-gray-200 hover:border-pink-400 hover:bg-blue-50"
                         : isSelected && isCorrect
                         ? "border-green-500 bg-green-50"
                         : isSelected && !isCorrect
@@ -372,7 +372,7 @@ const WorldWarOneTests = () => {
             {selectedAnswer !== null && (
               <Button
                 onClick={handleNextQuestion}
-                className="w-full bg-blue-600 hover:bg-blue-700"
+                className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
               >
                 {currentQuestion < questions.length - 1 ? "Следующий вопрос" : "Завершить тест"}
                 <Icon name="ChevronRight" size={18} className="ml-2" />
@@ -385,7 +385,7 @@ const WorldWarOneTests = () => {
                   key={index}
                   className={`h-2 w-2 rounded-full transition-colors ${
                     index === currentQuestion 
-                      ? "bg-blue-600" 
+                      ? "bg-pink-500" 
                       : index < currentQuestion
                       ? "bg-green-500"
                       : "bg-gray-300"
@@ -400,15 +400,15 @@ const WorldWarOneTests = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40">
+      <header className="bg-white/80 backdrop-blur-sm border-b border-pink-200 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center gap-3">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => navigate("/class/10/history/chapter-1/world-war-one")}
-              className="hover:bg-blue-100"
+              className="hover:bg-pink-100"
             >
               <Icon name="ArrowLeft" size={20} />
             </Button>
@@ -425,7 +425,7 @@ const WorldWarOneTests = () => {
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 gap-6">
           <Card 
-            className="p-8 space-y-4 hover:shadow-lg transition-all cursor-pointer group border-2 hover:border-blue-400"
+            className="p-8 space-y-4 hover:shadow-lg transition-all cursor-pointer group border-2 hover:border-pink-400"
             onClick={() => setTestMode("dates")}
           >
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center group-hover:scale-110 transition-transform">

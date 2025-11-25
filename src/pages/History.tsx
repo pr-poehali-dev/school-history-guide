@@ -49,7 +49,7 @@ const History = () => {
       description: "Проверь свои знания по истории",
       icon: "CheckCircle",
       emoji: "✅",
-      path: undefined,
+      path: "/class/10/history/tests",
     },
     {
       id: "people",
@@ -76,19 +76,19 @@ const History = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-amber-50/30 to-orange-50/20 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40 relative overflow-hidden">
       <div
-        className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-200/20 rounded-full blur-3xl animate-pulse"
+        className="absolute top-0 right-0 w-[600px] h-[600px] bg-pink-200/20 rounded-full blur-3xl animate-pulse"
         style={{ transform: "translate(30%, -30%)", animationDuration: "5s" }}
       />
       <div
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-300/20 rounded-full blur-3xl animate-pulse"
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-200/20 rounded-full blur-3xl animate-pulse"
         style={{ transform: "translate(-30%, 30%)", animationDuration: "4s" }}
       />
-      <div className="absolute top-1/3 right-1/4 text-9xl opacity-5 pointer-events-none">
+      <div className="absolute top-1/3 right-1/4 text-9xl opacity-[0.03] pointer-events-none filter grayscale">
         🏛️
       </div>
-      <div className="absolute bottom-1/4 left-1/4 text-9xl opacity-5 pointer-events-none">
+      <div className="absolute bottom-1/4 left-1/4 text-9xl opacity-[0.03] pointer-events-none filter grayscale">
         📜
       </div>
 
@@ -98,24 +98,24 @@ const History = () => {
             <Button
               variant="ghost"
               onClick={() => navigate("/class/10")}
-              className="gap-2"
+              className="gap-2 hover:bg-pink-100"
             >
               <Icon name="ArrowLeft" size={20} />
               К предметам
             </Button>
             <div className="flex items-center gap-3 ml-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center">
                 <Icon name="Scroll" size={20} className="text-white" />
               </div>
               <span className="text-xl font-bold">История • 10 класс</span>
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="gap-2">
+            <Button variant="ghost" className="gap-2 hover:bg-blue-100">
               <Icon name="Star" size={18} />
               Избранное
             </Button>
-            <Button variant="ghost" className="gap-2">
+            <Button variant="ghost" className="gap-2 hover:bg-blue-100">
               <Icon name="Home" size={18} />
             </Button>
           </div>
@@ -126,7 +126,7 @@ const History = () => {
             <div className="inline-flex items-center gap-3 mb-6">
               <Badge
                 variant="outline"
-                className="text-base px-6 py-2 border-amber-500/30 text-amber-700 bg-amber-50/50"
+                className="text-base px-6 py-2 border-pink-300/50 text-pink-700 bg-pink-50/50"
               >
                 <Icon name="Scroll" size={16} className="mr-2" />
                 История России и мира
@@ -146,15 +146,15 @@ const History = () => {
                 <Icon
                   name="Search"
                   size={22}
-                  className="absolute left-5 top-1/2 -translate-y-1/2 text-amber-600"
+                  className="absolute left-5 top-1/2 -translate-y-1/2 text-pink-600"
                 />
                 <Input
                   placeholder="Найди любую тему по истории..."
-                  className="pl-14 h-16 text-lg rounded-2xl border-2 border-amber-200 focus:border-amber-500 bg-white/80"
+                  className="pl-14 h-16 text-lg rounded-2xl border-2 border-pink-200 focus:border-pink-500 bg-white/80"
                 />
                 <Button
                   size="sm"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-orange-500 hover:to-amber-500 text-white rounded-xl"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-xl"
                 >
                   Искать
                 </Button>
@@ -162,16 +162,16 @@ const History = () => {
             </div>
 
             <div className="flex items-center justify-center gap-4 mb-12 flex-wrap">
-              <Badge className="px-4 py-2 bg-amber-100 text-amber-800 hover:bg-amber-200 cursor-pointer">
+              <Badge className="px-4 py-2 bg-pink-100 text-pink-800 hover:bg-pink-200 cursor-pointer">
                 #древниймир
               </Badge>
-              <Badge className="px-4 py-2 bg-orange-100 text-orange-800 hover:bg-orange-200 cursor-pointer">
+              <Badge className="px-4 py-2 bg-purple-100 text-purple-800 hover:bg-purple-200 cursor-pointer">
                 #средневековье
               </Badge>
-              <Badge className="px-4 py-2 bg-red-100 text-red-800 hover:bg-red-200 cursor-pointer">
+              <Badge className="px-4 py-2 bg-blue-100 text-blue-800 hover:bg-blue-200 cursor-pointer">
                 #революции
               </Badge>
-              <Badge className="px-4 py-2 bg-blue-100 text-blue-800 hover:bg-blue-200 cursor-pointer">
+              <Badge className="px-4 py-2 bg-indigo-100 text-indigo-800 hover:bg-indigo-200 cursor-pointer">
                 #войны
               </Badge>
             </div>
@@ -186,23 +186,23 @@ const History = () => {
                     ? navigate(section.path)
                     : navigate("/coming-soon")
                 }
-                className="group relative overflow-hidden border-2 border-amber-200/50 hover:border-amber-400 transition-all duration-300 cursor-pointer hover:shadow-2xl hover:-translate-y-2 bg-white/80 backdrop-blur-sm"
+                className="group relative overflow-hidden border-2 border-pink-200/50 hover:border-pink-400 transition-all duration-300 cursor-pointer hover:shadow-2xl hover:-translate-y-2 bg-white/80 backdrop-blur-sm"
                 style={{
                   animationDelay: `${index * 70}ms`,
                   animation: "fade-in 0.6s ease-out forwards",
                   opacity: 0,
                 }}
               >
-                <div className="absolute top-0 right-0 text-6xl opacity-10 pointer-events-none p-4">
+                <div className="absolute top-0 right-0 text-6xl opacity-[0.03] pointer-events-none p-4 filter grayscale">
                   {section.emoji}
                 </div>
 
                 <div className="p-8 relative">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center transition-transform group-hover:scale-110 group-hover:rotate-6">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center transition-transform group-hover:scale-110 group-hover:rotate-6">
                       <Icon
                         name={section.icon as any}
-                        className="text-amber-600"
+                        className="text-pink-600"
                         size={28}
                       />
                     </div>
@@ -225,7 +225,7 @@ const History = () => {
                     </button>
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-2 group-hover:text-amber-600 transition-colors">
+                  <h3 className="text-2xl font-bold mb-2 group-hover:text-pink-600 transition-colors">
                     {section.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">

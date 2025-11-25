@@ -6,16 +6,16 @@ const WorldWarOne = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
+      <header className="bg-white/80 backdrop-blur-sm border-b border-pink-200 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center gap-3">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => navigate("/class/10/history/chapter-1")}
-              className="hover:bg-blue-100"
+              className="hover:bg-pink-100"
             >
               <Icon name="ArrowLeft" size={20} />
             </Button>
@@ -27,7 +27,7 @@ const WorldWarOne = () => {
             </div>
             <Button
               onClick={() => navigate("/class/10/history/chapter-1/world-war-one/tests")}
-              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+              className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
             >
               <Icon name="CheckCircle" size={18} className="mr-2" />
               Тесты
@@ -38,7 +38,7 @@ const WorldWarOne = () => {
 
       {/* Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-8">
+        <div className="bg-white rounded-2xl shadow-sm border border-pink-200 p-6 sm:p-8 space-y-8">
           
           {/* Section 1 */}
           <section className="space-y-4">

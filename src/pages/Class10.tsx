@@ -40,7 +40,7 @@ const Class10 = () => {
             <Button
               variant="ghost"
               onClick={() => navigate("/")}
-              className="gap-2"
+              className="gap-2 hover:bg-pink-100"
             >
               <Icon name="ArrowLeft" size={20} />
               Назад
@@ -53,7 +53,7 @@ const Class10 = () => {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="gap-2">
+            <Button variant="ghost" className="gap-2 hover:bg-blue-100">
               <Icon name="Star" size={18} />
               Избранное
             </Button>
@@ -71,7 +71,7 @@ const Class10 = () => {
             </Badge>
 
             <h1 className="text-6xl font-bold mb-6 tracking-tight">
-              Какую тему разберём? 🎯
+              Какую тему разберём?
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

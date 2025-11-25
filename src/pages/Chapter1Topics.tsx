@@ -24,24 +24,24 @@ const Chapter1Topics = () => {
         "Причины войны, основные этапы, итоги и последствия для мира",
       available: true,
       emoji: "⚔️",
-      duration: "60 мин",
+      duration: "25 мин",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-amber-50/30 to-orange-50/20 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40 relative overflow-hidden">
       <div
-        className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-200/20 rounded-full blur-3xl animate-pulse"
+        className="absolute top-0 right-0 w-[600px] h-[600px] bg-pink-200/20 rounded-full blur-3xl animate-pulse"
         style={{ transform: "translate(30%, -30%)", animationDuration: "5s" }}
       />
       <div
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-300/20 rounded-full blur-3xl animate-pulse"
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-200/20 rounded-full blur-3xl animate-pulse"
         style={{ transform: "translate(-30%, 30%)", animationDuration: "4s" }}
       />
-      <div className="absolute top-1/3 right-1/4 text-9xl opacity-5 pointer-events-none">
+      <div className="absolute top-1/3 right-1/4 text-9xl opacity-[0.03] pointer-events-none filter grayscale">
         🌍
       </div>
-      <div className="absolute bottom-1/4 left-1/4 text-9xl opacity-5 pointer-events-none">
+      <div className="absolute bottom-1/4 left-1/4 text-9xl opacity-[0.03] pointer-events-none filter grayscale">
         📜
       </div>
 
@@ -51,13 +51,13 @@ const Chapter1Topics = () => {
             <Button
               variant="ghost"
               onClick={() => navigate("/class/10/history/chapters")}
-              className="gap-2"
+              className="gap-2 hover:bg-pink-100"
             >
               <Icon name="ArrowLeft" size={20} />
               К главам
             </Button>
             <div className="flex items-center gap-3 ml-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-white font-bold">
                 I
               </div>
               <span className="text-xl font-bold">Глава I</span>
@@ -66,7 +66,7 @@ const Chapter1Topics = () => {
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
-              className="gap-2"
+              className="gap-2 hover:bg-blue-100"
               onClick={() => navigate("/")}
             >
               <Icon name="Home" size={18} />
@@ -78,7 +78,7 @@ const Chapter1Topics = () => {
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="text-base px-6 py-2 border-amber-500/30 text-amber-700 bg-amber-50/50 mb-6"
+              className="text-base px-6 py-2 border-pink-300/50 text-pink-700 bg-pink-50/50 mb-6"
             >
               <Icon name="BookOpen" size={16} className="mr-2" />
               Глава I • Всеобщая история
@@ -99,7 +99,7 @@ const Chapter1Topics = () => {
                 key={topic.id}
                 className={`group relative overflow-hidden border-2 transition-all duration-300 bg-white/80 backdrop-blur-sm ${
                   topic.available
-                    ? "border-amber-200/50 hover:border-amber-400 cursor-pointer hover:shadow-2xl hover:-translate-y-1"
+                    ? "border-pink-200/50 hover:border-pink-400 cursor-pointer hover:shadow-2xl hover:-translate-y-1"
                     : "border-gray-200/50 opacity-60"
                 }`}
                 style={{
@@ -111,7 +111,7 @@ const Chapter1Topics = () => {
                   topic.available && navigate(`/class/10/history/chapter-1/world-war-one`)
                 }
               >
-                <div className="absolute top-0 right-0 text-8xl opacity-5 pointer-events-none p-8">
+                <div className="absolute top-0 right-0 text-8xl opacity-[0.03] pointer-events-none p-8 filter grayscale">
                   {topic.emoji}
                 </div>
 
@@ -120,7 +120,7 @@ const Chapter1Topics = () => {
                     <div
                       className={`flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center text-4xl transition-transform ${
                         topic.available
-                          ? "bg-gradient-to-br from-amber-100 to-orange-100 group-hover:scale-110 group-hover:rotate-6"
+                          ? "bg-gradient-to-br from-pink-100 to-purple-100 group-hover:scale-110 group-hover:rotate-6"
                           : "bg-gray-100"
                       }`}
                     >
@@ -132,7 +132,7 @@ const Chapter1Topics = () => {
                         <h3
                           className={`text-2xl font-bold ${
                             topic.available
-                              ? "group-hover:text-amber-600 transition-colors"
+                              ? "group-hover:text-pink-600 transition-colors"
                               : "text-gray-600"
                           }`}
                         >
@@ -157,12 +157,12 @@ const Chapter1Topics = () => {
                           <>
                             <Badge
                               variant="outline"
-                              className="border-amber-200 text-amber-700 bg-amber-50"
+                              className="border-pink-200 text-pink-700 bg-pink-50"
                             >
                               <Icon name="Clock" size={14} className="mr-1" />
                               {topic.duration}
                             </Badge>
-                            <div className="flex items-center gap-2 text-amber-600 font-medium">
+                            <div className="flex items-center gap-2 text-pink-600 font-medium">
                               <span>Начать изучение</span>
                               <Icon
                                 name="ArrowRight"
