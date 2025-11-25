@@ -25,7 +25,7 @@ const History = () => {
       description: "Временная шкала исторических событий",
       icon: "Clock",
       emoji: "⏰",
-      path: undefined,
+      path: "/class/10/history/timeline",
     },
     {
       id: "maps",
@@ -232,7 +232,7 @@ const History = () => {
                     {section.description}
                   </p>
 
-                  <div className="flex items-center gap-2 text-amber-600 font-medium text-sm">
+                  <div className="flex items-center gap-2 text-pink-600 font-medium text-sm">
                     <span>Открыть</span>
                     <Icon
                       name="ArrowRight"
@@ -246,14 +246,14 @@ const History = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-amber-100/60 to-orange-100/60 border-2 border-amber-200 backdrop-blur-sm">
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-pink-100/60 to-purple-100/60 border-2 border-pink-200 backdrop-blur-sm">
               <div className="flex items-start gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center">
-                  <Icon name="Flame" size={28} className="text-orange-500" />
+                  <Icon name="Flame" size={28} className="text-pink-500" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">
-                    Популярное сейчас 🔥
+                    Популярное сейчас
                   </h3>
                   <p className="text-muted-foreground text-sm mb-3">
                     Что изучают другие ученики
