@@ -2,10 +2,17 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import GuideDialog from "@/components/GuideDialog";
+import SearchDialog from "@/components/SearchDialog";
+import FavoritesDialog from "@/components/FavoritesDialog";
 
 const Index = () => {
   const navigate = useNavigate();
   const classes = Array.from({ length: 11 }, (_, i) => i + 1);
+  const [guideOpen, setGuideOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [favoritesOpen, setFavoritesOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/40 to-pink-50/40 relative overflow-hidden">
@@ -32,15 +39,15 @@ const Index = () => {
               <Icon name="BookOpen" size={24} className="text-white" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              УчиЛегко
+              МнеЯсно
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="gap-2">
+            <Button variant="ghost" className="gap-2" onClick={() => setSearchOpen(true)}>
               <Icon name="Search" size={18} />
               Поиск
             </Button>
-            <Button variant="ghost" className="gap-2">
+            <Button variant="ghost" className="gap-2" onClick={() => setFavoritesOpen(true)}>
               <Icon name="Star" size={18} />
               Избранное
             </Button>
@@ -62,30 +69,18 @@ const Index = () => {
             className="text-7xl font-bold mb-6 tracking-tight leading-tight"
             style={{ animationDelay: "0.1s" }}
           >
-            Привет, ученик! 👋
+            Привет, ученик!
           </h1>
 
-          <p className="text-3xl mb-4 text-foreground/80 font-medium">
-            Поняли все — поймёшь и ты!
-          </p>
-
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-            Справочник по всем предметам с 1 по 11 класс. Учись легко, находи
-            ответы быстро и становись лучшим в классе! 🚀
+          <p className="text-2xl mb-12 text-foreground/80 font-medium max-w-3xl mx-auto leading-relaxed">
+            Справочник по всем предметам с 1 по 11 класс. Учись легко и становись лучшим в классе!
           </p>
 
           <div className="flex items-center justify-center gap-4 mb-20">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-secondary to-pink-500 hover:from-pink-500 hover:to-secondary text-white px-8 py-6 text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
-            >
-              <Icon name="Rocket" size={20} className="mr-2" />
-              Начать учиться
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-8 py-6 text-lg rounded-2xl border-2 hover:border-primary"
+              onClick={() => setGuideOpen(true)}
+              className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-8 py-6 text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
               <Icon name="Play" size={20} className="mr-2" />
               Как это работает?
@@ -165,6 +160,10 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      <GuideDialog open={guideOpen} onOpenChange={setGuideOpen} />
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+      <FavoritesDialog open={favoritesOpen} onOpenChange={setFavoritesOpen} />
 
       <style>{`
         @keyframes fade-in {

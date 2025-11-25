@@ -25,6 +25,13 @@ const WorldWarOne = () => {
               </h1>
               <p className="text-sm text-slate-600">Глава I • Всеобщая история</p>
             </div>
+            <Button
+              onClick={() => navigate("/class/10/history/chapter-1/world-war-one/tests")}
+              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+            >
+              <Icon name="CheckCircle" size={18} className="mr-2" />
+              Тесты
+            </Button>
           </div>
         </div>
       </header>
